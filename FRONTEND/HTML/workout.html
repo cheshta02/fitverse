@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workout Plans - FitVerse</title>
+  <link rel="icon" href="https://fitversegym.com/logo.png" type="image/png">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <style>
+    .selection-step {
+      display: none;
+    }
+
+    .selection-step.active {
+      display: block;
+    }
+
+    .program-card,
+    .workout-choice {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Fit<span>Verse</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="workout.html" class="active">Workouts</a>
+        <a href="diet.html">Nutrition</a>
+        <a href="assistant.html">AI Assistant</a>
+        <a href="community.html">Community</a>
+        <a href="stories.html">Stories</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="navLast">Contact</a>
+      </div>
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <!-- Hero -->
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80" alt="Workout"
+      class="page-hero-bg" />
+    <div class="container">
+      <span class="section-label">Training Programs</span>
+      <h1>Your Workout Plan</h1>
+      <p class="body-text">Choose your preferences and get a personalized workout routine
+      </p>
+    </div>
+  </section>
+
+  <!-- Workout Selection Flow -->
+  <section class="section section-dark workout-selection">
+    <div class="container">
+
+      <!-- Step 1 -->
+      <div class="selection-step active" id="step1">
+        <div class="section-header reveal">
+          <span class="section-label">Step 1</span>
+          <h2 class="section-title">Where will you workout?</h2>
+        </div>
+        <div class="program-grid reveal">
+          <div class="program-card workout-choice" data-location="gym">
+            <img src="https://images.unsplash.com/photo-1760031670160-4da44e9596d0?w=800&q=80" alt="Gym Workout">
+            <div class="program-card-overlay"></div>
+            <div class="program-card-content">
+              <span class="program-card-num">01</span>
+              <h3>Gym Workout</h3>
+              <p>Full equipment access and professional environment</p>
+            </div>
+          </div>
+
+          <div class="program-card workout-choice" data-location="home">
+            <img src="https://images.unsplash.com/photo-1564282350350-a8355817fd2e?w=800&q=80" alt="Home Workout">
+            <div class="program-card-overlay"></div>
+            <div class="program-card-content">
+              <span class="program-card-num">02</span>
+              <h3>Home Workout</h3>
+              <p>No equipment needed, workout anywhere</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="selection-step" id="step2">
+        <div class="section-header">
+          <span class="section-label">Step 2</span>
+          <h2 class="section-title">What's your experience level?</h2>
+        </div>
+        <div class="program-grid">
+          <div class="program-card workout-choice level-option" data-level="beginner">
+            <img
+              src="https://media.istockphoto.com/id/1207041834/photo/group-of-young-happy-fit-people-doing-exercises-in-gym.jpg?s=612x612&w=0&k=20&c=3LkL97NzJct4YwSNc_X70FEX9uH-BkKBMY9Vgy1O5sg=" alt="Beginner Workout">
+            <div class="program-card-overlay"></div>
+            <div class="program-card-content">
+              <span class="program-card-num">01</span>
+              <h3>Beginner</h3>
+              <p>New to fitness or returning after a break</p>
+            </div>
+          </div>
+          <div class="program-card workout-choice level-option" data-level="intermediate">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROOQkzF6wNMITcUOI7-YCu09PbvjNx4MlBAw&s" alt="Intermediate Workout">
+            <div class="program-card-overlay"></div>
+            <div class="program-card-content">
+              <span class="program-card-num">02</span>
+              <h3>Intermediate</h3>
+              <p>Regular workout routine for 6+ months</p>
+            </div>
+          </div>
+          <div class="program-card workout-choice level-option" data-level="advanced">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxPNFutf53LY_ZNZdclosa8YljfybCyr4R-g&s" alt="Advanced Workout">
+            <div class="program-card-overlay"></div>
+            <div class="program-card-content">
+              <span class="program-card-num">03</span>
+              <h3>Advanced</h3>
+              <p>Experienced athlete with years of training</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="selection-step" id="step3">
+        <div class="section-header">
+          <span class="section-label">Step 3</span>
+          <h2 class="section-title" data-testid="step3-title">What's your primary goal?</h2>
+        </div>
+        <div class="program-grid">
+          <div class="program-card workout-choice goal-option" data-goal="muscle">
+            <img src="https://images.unsplash.com/photo-1674834726923-3ba828d37846?w=800&q=80" alt="Muscle Gain">
+            <div class="program-card-overlay"></div>
+            <div class="program-card-content">
+              <span class="program-card-num">01</span>
+              <h3>Muscle Gain</h3>
+              <p>Build strength and increase muscle mass</p>
+            </div>
+          </div>
+          <div class="program-card workout-choice goal-option" data-goal="fatloss">
+            <img src="https://images.unsplash.com/photo-1434682881908-b43d0467b798?w=800&q=80" alt="Fat Loss">
+            <div class="program-card-overlay"></div>
+            <div class="program-card-content">
+              <span class="program-card-num">02</span>
+              <h3>Fat Loss</h3>
+              <p>Burn fat and improve body composition</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+     <div class="selection-step" id="step4">
+      <div class="section-header">
+        <span class="section-label">Your Plan</span>
+        <h2 class="section-title">Your Personalized Workout Plan</h2>
+      </div>
+      <div id="workoutPlan"></div>
+        <button class="btn btn-outline" id= "resetBtn">Start Over</button>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Fit<span>Verse</span></a>
+          <p>Transform your body, elevate your mind. FitVerse provides expert-designed fitness programs for every level.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <a href="index.html">Home</a>
+          <a href="workout.html">Workout Plans</a>
+          <a href="diet.html">Nutrition</a>
+          <a href="assistant.html">AI Assistant</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="stories.html">Transformations</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@fitverse.com">hello@fitverse.com</a>
+          <a href="tel:+918059558483">+91 8059558483</a>
+          <a>123 Fitness Ave, Rajpura, Punjab, 143001</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 FitVerse. All rights reserved.</p>
+        <div class="SocialMedia">
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">YouTube</a>
+          <a href="#">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../JS/script.js" defer></script>
+  
+</body>
+
+</html>

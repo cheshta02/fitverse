@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diet & Nutrition - FitVerse</title>
+  <link rel="icon" href="https://fitversegym.com/logo.png" type="image/png">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <style>
+    .diet-step { display: none; }
+    .diet-step.active { display: block; }
+    .diet-choice-card, .program-card,.diet-goal-card { cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Fit<span>Verse</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="workout.html">Workouts</a>
+        <a href="diet.html" class="active">Nutrition</a>
+        <a href="assistant.html">AI Assistant</a>
+        <a href="community.html">Community</a>
+        <a href="stories.html">Stories</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="navLast">Contact</a>
+      </div>
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1600&q=80" alt="Healthy nutrition" class="page-hero-bg" >
+    <div class="container">
+      <span class="section-label">Fuel Your Body</span>
+      <h1>Personalized Diet Plans</h1>
+      <p class="body-text">Choose your dietary preferences and fitness goals</p>
+    </div>
+  </section>
+
+  <!-- Diet Selection Flow -->
+  <section class="section section-dark diet-selection">
+    <div class="container">
+
+      <!-- Step 1 -->
+      <div class="diet-step active" id="dietStep1">
+        <div class="section-header reveal">
+          <span class="section-label">Step 1</span>
+          <h2 class="section-title">Choose Your Diet Type</h2>
+        </div>
+        <div class="program-grid reveal">
+          <div class="program-card diet-choice-card" data-type="veg">
+            <img src="https://www.health.com/thmb/RSFs1CsZbhRaMVxe74vp5OlwUNY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/gettyimages-726799295-2000-0f58cf44f88a47cbbf93358d9fedabc0.jpg" alt="Vegetarian">
+            <div class="program-card-overlay"></div>
+            <div class="program-card-content">
+              <span class="program-card-num">01</span>
+              <h3>Vegetarian</h3>
+              <p>Plant-based nutrition for optimal health</p>
+            </div>
+          </div>
+
+          <div class="program-card diet-choice-card" data-type="nonveg">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnesTpxKa2g0yR8axGvhtPdyTSYTT2DsLQyA&s" alt="Non-Vegetarian">
+            <div class="program-card-overlay"></div>
+            <div class="program-card-content">
+              <span class="program-card-num">02</span>
+              <h3>Non-Vegetarian</h3>
+              <p>Complete protein sources for muscle growth</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="diet-step" id="dietStep2">
+        <div class="section-header">
+          <span class="section-label">Step 2</span>
+          <h2 class="section-title">What's Your Goal?</h2>
+        </div>
+        <div class="program-grid">
+          <div class="program-card diet-goal-card" data-goal="fatloss">
+            <img src="https://media.istockphoto.com/id/1299421209/photo/diet-and-exercise-for-weight-loss.jpg?s=612x612&w=0&k=20&c=eaXOUJmICKlcSo7idrgCOBH6ZkPP3LX8IPHpeas50Rc=" alt="Fat Loss Diet">
+            <div class="program-card-overlay"></div>
+            <div class="program-card-content">
+              <span class="program-card-num">01</span>
+              <h3>Fat Loss Diet</h3>
+              <p>Calorie deficit for effective fat burning</p>
+            </div>
+          </div>
+
+          <div class="program-card diet-goal-card" data-goal="muscle">
+            <img src="https://img.freepik.com/premium-photo/cropped-view-fit-young-guy-standing-near-wholesome-protein-products-kitchen-closeup-unrecognizable-sporty-man-offering-healthy-nutrition-muscle-gain-weight-loss_379823-39813.jpg?w=360" alt="Muscle Gain Diet">
+            <div class="program-card-overlay"></div>
+            <div class="program-card-content">
+              <span class="program-card-num">02</span>
+              <h3>Muscle Gain Diet</h3>
+              <p>High protein for muscle building</p>
+            </div>
+          </div>
+
+          <div class="program-card diet-goal-card" data-goal="maintenance">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/039/295/261/small/ai-generated-detailed-view-of-a-person-lifting-weights-in-a-gym-muscles-tensing-with-a-backdrop-of-exercise-equipment-and-blurred-movement-nearby-a-plate-of-healthy-food-emphasizing-nutrition-photo.jpeg" alt="Maintenance Diet">
+            <div class="program-card-overlay"></div>
+            <div class="program-card-content">
+              <span class="program-card-num">03</span>
+              <h3>Maintenance Diet</h3>
+              <p>Balanced nutrition for overall health</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="diet-step" id="dietStep3">
+        <div class="section-header">
+          <span class="section-label">Your Plan</span>
+          <h2 class="section-title">Your Personalized Meal Plan</h2>
+        </div>
+        <div id="mealPlan"></div>
+        <button class="btn black-button" id="resetDietBtn">Start Over</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Supplement Guide -->
+  <section id="supplement-guide" class="section section-light diet-detail-section">
+    <div class="container">
+      <div class="program-detail reveal">
+        <div class="program-detail-header">
+          <h2>Supplement Guide</h2>
+          <div class="program-tags">
+            <span class="program-tag">Evidence-Based</span>
+            <span class="program-tag">Essential Supplements</span>
+            <span class="program-tag">Performance</span>
+          </div>
+        </div>
+        <div class="program-overview">
+          <h3>The Truth About Supplements</h3>
+          <p>Supplements support a solid diet - they do not replace one. Only a handful of supplements have strong scientific backing. Focus your budget on these proven essentials before considering anything else. Quality matters - look for third-party tested products.</p>
+        </div>
+        <div class="diet-detail-grid">
+          <div class="diet-detail-card">
+            <h3>Essential Supplements</h3>
+            <div class="meal-item"><span class="meal-time">Tier 1 - Must Have</span><h4>Creatine Monohydrate</h4><p>The most researched supplement in sports science. 5g daily improves strength, power, and muscle gains. No loading phase needed. Take at any time daily.</p><div class="meal-macros"><span>5g/day</span><span>Daily</span></div></div>
+            <div class="meal-item"><span class="meal-time">Tier 1 - Must Have</span><h4>Whey Protein</h4><p>Convenient way to hit protein targets. 1-2 scoops daily as needed. Best post-workout or between meals. Choose isolate for lactose sensitivity.</p><div class="meal-macros"><span>25-50g/day</span><span>As Needed</span></div></div>
+            <div class="meal-item"><span class="meal-time">Tier 1 - Must Have</span><h4>Vitamin D3</h4><p>Essential if you get limited sunlight. Supports bone health, immune function, and testosterone levels. Take with a fat-containing meal for absorption.</p><div class="meal-macros"><span>2000-5000 IU</span><span>Daily</span></div></div>
+            <div class="meal-item"><span class="meal-time">Tier 2 - Recommended</span><h4>Omega-3 Fish Oil</h4><p>Anti-inflammatory, supports heart and brain health. Look for high EPA/DHA content. Essential if you do not eat fatty fish regularly.</p><div class="meal-macros"><span>1-3g EPA+DHA</span><span>Daily</span></div></div>
+            <div class="meal-item"><span class="meal-time">Tier 2 - Recommended</span><h4>Magnesium</h4><p>Supports sleep quality, muscle function, and recovery. Magnesium glycinate or citrate forms are best absorbed. Take before bed.</p><div class="meal-macros"><span>200-400mg</span><span>Before Bed</span></div></div>
+          </div>
+          <div class="diet-detail-card">
+            <h3>What to Avoid</h3>
+            <div class="macro-visual">
+              <div class="macro-bar-item"><div class="macro-bar-label"><span>Creatine - Evidence</span><span>Strong</span></div><div class="macro-bar"><div class="macro-bar-fill" style="width: 95%; background-color: var(--success);"></div></div></div>
+              <div class="macro-bar-item"><div class="macro-bar-label"><span>Whey Protein - Evidence</span><span>Strong</span></div><div class="macro-bar"><div class="macro-bar-fill" style="width: 90%; background-color: var(--success);"></div></div></div>
+              <div class="macro-bar-item"><div class="macro-bar-label"><span>BCAAs - Evidence</span><span>Weak</span></div><div class="macro-bar"><div class="macro-bar-fill" style="width: 20%; background-color: var(--error);"></div></div></div>
+              <div class="macro-bar-item"><div class="macro-bar-label"><span>Fat Burners - Evidence</span><span>Very Weak</span></div><div class="macro-bar"><div class="macro-bar-fill" style="width: 10%; background-color: var(--error);"></div></div></div>
+              <div class="macro-bar-item"><div class="macro-bar-label"><span>Test Boosters - Evidence</span><span>Very Weak</span></div><div class="macro-bar"><div class="macro-bar-fill" style="width: 8%; background-color: var(--error);"></div></div></div>
+            </div>
+            <h3 style="margin-top: 2rem;">Tips</h3>
+            <ul class="diet-tips">
+              <li>BCAAs are unnecessary if you eat enough protein - save your money</li>
+              <li>Fat burners are largely ineffective - caloric deficit is what burns fat</li>
+              <li>Testosterone boosters have virtually no evidence - skip them entirely</li>
+              <li>Always choose third-party tested supplements (NSF, Informed Sport)</li>
+              <li>Start with food first - supplements are the last 5%, not the foundation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calorie Calculator -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Smart Tools</span>
+        <h2>Calorie Calculator</h2>
+      </div>
+      <div class="calculator-section reveal">
+        <div class="calc-form">
+          <div class="group">
+            <label for="age">Age</label>
+            <input type="number" id="age" data-testid="calc-age" placeholder="e.g. 28">
+          </div>
+          <div class="group">
+            <label for="gender">Gender</label>
+            <select id="gender" data-testid="calc-gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <div class="group">
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" data-testid="calc-weight" placeholder="e.g. 75">
+          </div>
+          <div class="group">
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" data-testid="calc-height" placeholder="e.g. 175">
+          </div>
+          <div class="group">
+            <label for="calc-activity">Activity Level</label>
+            <select id="calc-activity" data-testid="calc-activity">
+              <option value="sedentary">Sedentary (desk job)</option>
+              <option value="light">Light (1-2 days/week)</option>
+              <option value="moderate" selected>Moderate (3-5 days/week)</option>
+              <option value="active">Active (6-7 days/week)</option>
+              <option value="very-active">Very Active (athlete)</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn skin-button" data-testid="calorie-calc-btn">Calculate Daily Calories</button>
+        <div class="calc-result" data-testid="calorie-result">
+          <div class="calc-result-number">0</div>
+          <div class="calc-result-label">Estimated Daily Calories (TDEE)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Fit<span>Verse</span></a>
+          <p>Transform your body, elevate your mind. FitVerse provides expert-designed fitness programs for every level.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <a href="index.html">Home</a>
+          <a href="workout.html">Workout Plans</a>
+          <a href="diet.html">Nutrition</a>
+          <a href="assistant.html">AI Assistant</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="stories.html">Transformations</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@fitverse.com">hello@fitverse.com</a>
+          <a href="tel:+918059558483">+91 8059558483</a>
+          <a>123 Fitness Ave, Rajpura, Punjab, 143001</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 FitVerse. All rights reserved.</p>
+        <div class="SocialMedia">
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">YouTube</a>
+          <a href="#">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../JS/script.js" defer></script>
+  
+</body>
+</html>

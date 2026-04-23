@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community - FitVerse</title>
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="icon" href="https://fitversegym.com/logo.png" type="image/png">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Fit<span>Verse</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="workout.html">Workouts</a>
+        <a href="diet.html">Nutrition</a>
+        <a href="assistant.html">AI Assistant</a>
+        <a href="community.html" class="active">Community</a>
+        <a href="stories.html">Stories</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="navLast">Contact</a>
+      </div>
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1600&q=80" alt="Community" class="page-hero-bg">
+    <div class="container">
+      <span class="section-label">Join the Movement</span>
+      <h1>FitVerse Community</h1>
+      <p class="body-text">Connect with thousands of fitness enthusiasts. Share your journey, get motivated, and grow together.</p>
+    </div>
+  </section>
+  <section class="section section-dark">
+    <div class="container">
+      <div class="community-content active" id="feed-content" data-testid="feed-content">
+        <!-- POST CREATOR -->
+        <div class="post-creator reveal" data-testid="post-creator">
+          <div class="post-creator-header">
+            <div class="user-avatar">YOU</div>
+            <input type="text" placeholder="Share your progress, ask questions, or motivate others..." id="post-input" data-testid="post-input">
+          </div>
+          <div class="post-creator-actions">
+            <button class="btn-icon" id="upload-image-btn" data-testid="upload-image-btn" title="Upload Image">📷</button>
+            <input type="file" id="image-upload" accept="image/*" style="display:none;">
+            <button class="btn btn-primary btn-sm" id="create-post-btn" data-testid="create-post-btn">Post</button>
+          </div>
+          <div id="image-preview-container" style="display:none; margin-top: 1rem;">
+            <img id="image-preview" src="" alt="Preview" style="max-width: 200px; border: 1px solid var(--border-subtle);">
+            <button class="btn-icon" id="remove-image-btn" title="Remove Image" style="margin-left: 0.5rem;">❌</button>
+          </div>
+        </div>
+        <!-- FEED -->
+        <div class="community-feed" id="community-feed" data-testid="community-feed">
+          <!-- Post 1 -->
+          <div class="feed-post reveal" data-testid="feed-post-1" data-post-id="static-1" data-own="false">
+            <div class="post-header">
+              <div class="user-avatar">MJ</div>
+              <div class="post-user-info">
+                <strong>Mike Johnson</strong>
+                <span class="post-time">2 hours ago</span>
+              </div>
+            </div>
+            <div class="post-content">
+              <p>Just hit a new PR on deadlifts! 405 lbs x 5 reps. The consistency is finally paying off. Remember, progress isn't always linear but it's always worth it! 💪</p>
+              <img src="https://tse2.mm.bing.net/th/id/OIP.D03lcc3YQPdPL9PIe2O0GQHaDt?pid=Api&h=220&P=0" alt="Transition" class="post-image">
+            </div>
+            <div class="post-stats">
+              <span class="post-stat"><span class="like-count">47</span> likes</span>
+              <span class="post-stat"><span class="comment-count">1</span> comments</span>
+            </div>
+            <div class="post-actions">
+              <button class="post-action-btn like-btn" data-testid="like-btn-1"><span class="icon">🤍</span> Like</button>
+              <button class="post-action-btn comment-btn" data-testid="comment-btn-1"><span class="icon">💬</span> Comment</button>
+              <button class="post-action-btn open-share-btn" data-testid="open-share-btn-1"><span class="icon">🔗</span> Share</button>
+            </div>
+            <div class="post-comments" style="display:none;">
+              <div class="comment" data-comment-id="static-1-c1" data-own="false">
+                <div class="user-avatar sm">SK</div>
+                <div class="comment-content">
+                  <strong>Sarah Kim</strong>
+                  <p>Incredible work! What program are you following?</p>
+                </div>
+              </div>
+              <div class="comment-input-wrapper">
+                <input type="text" placeholder="Write a comment..." class="comment-input">
+                <button class="btn-icon comment-submit-btn">➤</button>
+              </div>
+            </div>
+          </div>
+          <!-- Post 2 -->
+          <div class="feed-post reveal" data-testid="feed-post-2" data-post-id="static-2" data-own="false">
+            <div class="post-header">
+              <div class="user-avatar">AL</div>
+              <div class="post-user-info">
+                <strong>Alex Lee</strong>
+                <span class="post-time">5 hours ago</span>
+              </div>
+            </div>
+            <div class="post-content">
+              <p>Week 8 transformation update! Down 18 lbs and feeling amazing. The FitVerse meal plans made all the difference. Consistency over perfection! 🔥</p>
+              <img src="https://tse3.mm.bing.net/th/id/OIP.57brk4JNsIea-5TJchUIYAHaHa?pid=Api&h=220&P=0" alt="Transition" class="post-image">
+            </div>
+            <div class="post-stats">
+              <span class="post-stat"><span class="like-count">132</span> likes</span>
+              <span class="post-stat"><span class="comment-count">0</span> comments</span>
+            </div>
+            <div class="post-actions">
+              <button class="post-action-btn like-btn"><span class="icon">🤍</span> Like</button>
+              <button class="post-action-btn comment-btn"><span class="icon">💬</span> Comment</button>
+              <button class="post-action-btn open-share-btn"><span class="icon">🔗</span> Share</button>
+            </div>
+            <div class="post-comments" style="display:none;">
+              <div class="comment-input-wrapper">
+                <input type="text" placeholder="Write a comment..." class="comment-input">
+                <button class="btn-icon comment-submit-btn">➤</button>
+              </div>
+            </div>
+          </div>
+          <!-- Post 3 -->
+          <div class="feed-post reveal" data-testid="feed-post-3" data-post-id="static-3" data-own="false">
+            <div class="post-header">
+              <div class="user-avatar">RP</div>
+              <div class="post-user-info">
+                <strong>Rachel Patel</strong>
+                <span class="post-time">1 day ago</span>
+              </div>
+            </div>
+            <div class="post-content">
+              <p>Quick question: Anyone have tips for staying consistent with early morning workouts? I keep hitting snooze 😅</p>
+            </div>
+            <div class="post-stats">
+              <span class="post-stat"><span class="like-count">23</span> likes</span>
+              <span class="post-stat"><span class="comment-count">2</span> comments</span>
+            </div>
+            <div class="post-actions">
+              <button class="post-action-btn like-btn"><span class="icon">🤍</span> Like</button>
+              <button class="post-action-btn comment-btn"><span class="icon">💬</span> Comment</button>
+              <button class="post-action-btn open-share-btn"><span class="icon">🔗</span> Share</button>
+            </div>
+            <div class="post-comments" style="display:none;">
+              <div class="comment" data-comment-id="static-3-c1" data-own="false">
+                <div class="user-avatar sm">MJ</div>
+                <div class="comment-content">
+                  <strong>Mike Johnson</strong>
+                  <p>Put your alarm across the room! Forces you to get up 👍</p>
+                </div>
+              </div>
+              <div class="comment" data-comment-id="static-3-c2" data-own="false">
+                <div class="user-avatar sm">DW</div>
+                <div class="comment-content">
+                  <strong>David Wilson</strong>
+                  <p>Prep your gym clothes the night before. Makes it way easier!</p>
+                </div>
+              </div>
+              <div class="comment-input-wrapper">
+                <input type="text" placeholder="Write a comment..." class="comment-input">
+                <button class="btn-icon comment-submit-btn">➤</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Fit<span>Verse</span></a>
+          <p>Transform your body, elevate your mind. FitVerse provides expert-designed fitness programs for every level.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <a href="index.html">Home</a>
+          <a href="workout.html">Workout Plans</a>
+          <a href="diet.html">Nutrition</a>
+          <a href="assistant.html">AI Assistant</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="community.html">Community</a>
+          <a href="stories.html">Transformations</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@fitverse.com">hello@fitverse.com</a>
+          <a href="tel:+918059558483">+91 8059558483</a>
+          <a>123 Fitness Ave, Rajpura, Punjab 143001</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 FitVerse. All rights reserved.</p>
+        <div class="SocialMedia">
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">YouTube</a>
+          <a href="#">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../JS/script.js"></script>
+</body>
+</html>

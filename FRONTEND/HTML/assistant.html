@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Fitness Assistant - FitVerse</title>
+  <link rel="icon" href="https://fitversegym.com/logo.png" type="image/png">
+  <link rel="stylesheet" href="../CSS/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Fit<span>Verse</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="workout.html">Workouts</a>
+        <a href="diet.html">Nutrition</a>
+        <a href="assistant.html" class="active">AI Assistant</a>
+        <a href="community.html">Community</a>
+        <a href="stories.html">Stories</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="navLast">Contact</a>
+      </div>
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1559369064-c4d65141e408?w=1600&q=80" alt="Fitness technology" class="page-hero-bg">
+    <div class="container">
+      <span class="section-label">Smart Fitness Tools</span>
+      <h1>AI Fitness Assistant</h1>
+      <p class="body-text">Get instant answers about diet, workouts, BMI, and motivation. Your personal fitness guide, available 24/7.</p>
+    </div>
+  </section>
+  <!-- Chatbot Section -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header reveal" style="text-align: center;">
+        <span class="section-label">Ask Anything</span>
+        <h2>Chat With FitBot</h2>
+        <p class="body-text" style="margin: 1rem auto 0;">Ask about diet plans, workout routines, BMI calculations, or get a motivational boost.</p>
+      </div>
+      <div class="chat-container reveal" data-testid="chat-container">
+        <div class="chat-messages" data-testid="chat-messages">
+          <!-- Messages will be added dynamically -->
+        </div>
+        <div class="chat-input-area">
+          <input type="text" class="chat-input" data-testid="chat-input" placeholder="Type your question here...">
+          <button class="chat-send" data-testid="chat-send-btn">Send</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Info Section -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">How It Works</span>
+        <h2>Topics I Can Help With</h2>
+      </div>
+      <div class="features-grid reveal">
+        <div class="features" style="border-color: rgba(26,26,26,0.1);">
+          <div class="feature-icon" style="color: var(--accent-secondary);">01</div>
+          <h3>Diet & Nutrition</h3>
+          <p>Get personalized meal suggestions, macro breakdowns, and nutritional guidance tailored to your goals.</p>
+        </div>
+        <div class="features" style="border-color: rgba(26,26,26,0.1);">
+          <div class="feature-icon" style="color: var(--accent-secondary);">02</div>
+          <h3>Workout Routines</h3>
+          <p>Receive exercise recommendations, training splits, and progressive overload strategies for any level.</p>
+        </div>
+        <div class="features" style="border-color: rgba(26,26,26,0.1);">
+          <div class="feature-icon" style="color: var(--accent-secondary);">03</div>
+          <h3>BMI & Metrics</h3>
+          <p>Understand your body metrics, what they mean, and how to use them to guide your fitness journey.</p>
+        </div>
+        <div class="features" style="border-color: rgba(26,26,26,0.1);">
+          <div class="feature-icon" style="color: var(--accent-secondary);">04</div>
+          <h3>Motivation</h3>
+          <p>Need a push? Get motivational advice and tips to stay consistent and overcome training plateaus.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">Fit<span>Verse</span></a>
+          <p>Transform your body, elevate your mind. FitVerse provides expert-designed fitness programs for every level.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Pages</h4>
+          <a href="index.html">Home</a>
+          <a href="workout.html">Workout Plans</a>
+          <a href="diet.html">Nutrition</a>
+          <a href="assistant.html">AI Assistant</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="stories.html">Transformations</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:hello@fitverse.com">hello@fitverse.com</a>
+          <a href="tel:+918059558483">+91 8059558483</a>
+          <a>123 Fitness Ave, Rajpura, Punjab 143001</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 FitVerse. All rights reserved.</p>
+        <div class="SocialMedia">
+          <a href="#">Instagram</a>
+          <a href="#">Twitter</a>
+          <a href="#">YouTube</a>
+          <a href="#">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="login active" data-testid="login-modal">
+    <div class="login-modal">
+      <div class="login-header">
+        <h2>Access AI Assistant</h2>
+        <p>Create your account to unlock personalized fitness guidance</p>
+      </div>   
+      <form class="login-form" id="loginForm">
+        <div class="group">
+          <label for="login-name">Full Name *</label>
+          <input type="text" id="login-name" data-testid="login-name" placeholder="Enter your full name" required>
+        </div>
+        <div class="group">
+          <label for="login-phone">Phone Number *</label>
+          <input type="tel" id="login-phone" data-testid="login-phone" placeholder="Enter your phone number" required>
+        </div>   
+        <div class="group">
+          <label for="login-email">Email Address *</label>
+          <input type="email" id="login-email" data-testid="login-email" placeholder="Enter your email" required>
+        </div>      
+        <div class="group">
+          <label>Choose Your Plan *</label>
+          <div class="plan-options">
+             <div class="plan-card" data-plan="1">
+              <div class="plan-header">
+                <h4>1 Month</h4>
+                <span class="plan-price">&#8377;299/mo</span>
+              </div>
+              <ul class="plan-features">
+                <li>AI Assistant Access</li>
+                <li>Basic Support</li>
+              </ul>
+            </div>
+          
+            <div class="plan-card popular" data-plan="6">
+              <span class="plan-badge">Most Popular</span>
+              <div class="plan-header">
+                <h4>6 Months</h4>
+                <span class="plan-price">&#8377;799/6mo</span>
+              </div> 
+              <ul class="plan-features">
+                <li>AI Assistant Access</li>
+                <li>Priority Support</li>
+                <li>Meal Plans</li>
+              </ul>
+            </div>
+          
+            <div class="plan-card" data-plan="12">
+              <div class="plan-header">
+                <h4>1 Year</h4>
+                <span class="plan-price">&#8377;1999/yr</span>
+              </div>
+              <ul class="plan-features">
+                <li>AI Assistant Access</li>
+                <li>VIP Support</li>
+                <li>All Features</li>
+              </ul>
+            </div>  
+          </div>
+          <div>
+            <input type="hidden" id="selected-plan" required>
+            <span class="form-error" id="plan-error">Please select a subscription plan</span>
+          </div>
+        </div>
+      
+        <button type="submit" class="btn skin-button">Start Your Journey</button>
+      </form>
+    
+      <div class="login-footer">
+        <p>Already have an account? <a href="#" id="loginLink">Log in here</a></p>
+      </div>
+    </div> 
+  </div>
+
+  <script src="../JS/script.js" defer></script>
+  
+</body>
+</html>
