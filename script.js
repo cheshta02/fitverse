@@ -1,5 +1,5 @@
 (function () {
-  "use strict";                                                        //to treat all js code accourding to new version of javascript
+  "use strict";                                                       
   let workoutData = { location: "", level: "", goal: "" };
   let dietData = { type: "", goal: "" };
   let selectedSubscriptionPlan = null;
@@ -12,7 +12,6 @@
     BMICalculator();
     CalorieCalculator();
     WorkoutCollapse();
-    Chatbot();
     StoryFilter();
     ContactForm();
     SelectionSteps();
@@ -57,20 +56,20 @@
     });
   }
   // ==================== UI HELPERS ====================
-  function ScrollReveal() {                                                          //Animates elements when they appear on screen
+  function ScrollReveal() {                                                       
     const revealEls = document.querySelectorAll(".reveal, .card, .feature-card, .story-card, .team-card, .testimonial-card");
     if (!revealEls.length) return;
 
-    const observer = new IntersectionObserver(                                        //browser API to detect when elements enter the viewport
+    const observer = new IntersectionObserver(                                       
       (entries) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;                                    //IntersectionRatio is percentage of element visible in viewport
+          if (!entry.isIntersecting) return;                                  
           entry.target.classList.add("visible");
           entry.target.style.opacity = "1";
           entry.target.style.transform = "translateY(0)";
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },                // trigger when 10% of the element is visible, and start a bit earlier
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },               
     );
 
     revealEls.forEach((el) => {
@@ -83,7 +82,7 @@
     });
   }
 
-  function SmoothScroll() {                                                 //Overrides default anchor behavior ,Adds smooth scrolling effect
+  function SmoothScroll() {                                               
     document.querySelectorAll('a[href="#"]').forEach((anchor) => {
       anchor.addEventListener("click", function (e) {
         const targetId = this.getAttribute("href");
@@ -105,7 +104,7 @@
     if (!openBtn || !modal) return;
 
     openBtn.addEventListener("click", function (e) {
-      e.preventDefault();                                                                     // prevent default link behavior
+      e.preventDefault();                                                                    
       modal.classList.add("active");
     });
 
@@ -121,8 +120,8 @@
 
     if (calcBtn) {
       calcBtn.addEventListener("click", function () {
-        const weight = parseFloat(                                                           // converting string to number
-          document.querySelector('[data-testid="bmi-weight"]')?.value || "0",          //? - optional chaining to avoid errors if element missing
+        const weight = parseFloat(                                                        
+          document.querySelector('[data-testid="bmi-weight"]')?.value || "0",        
         );
         const heightCm = parseFloat(document.querySelector('[data-testid="bmi-height"]')?.value || "0");
         const resultDiv = document.querySelector('[data-testid="bmi-result"]');
@@ -136,7 +135,7 @@
 
         const numberEl = resultDiv.querySelector(".bmi-number");
         const categoryEl = resultDiv.querySelector(".bmi-category");
-        if (numberEl) numberEl.textContent = bmi.toFixed(1);                                       // display BMI with 1 decimal place
+        if (numberEl) numberEl.textContent = bmi.toFixed(1);                                  
         if (categoryEl) categoryEl.textContent = category;
         resultDiv.classList.add("visible");
       });
@@ -172,87 +171,7 @@
       resultDiv.classList.add("visible");
     });
   }
-  // ==================== CHATBOT ====================
-  function appendChatMessage(messagesDiv, text, type) {
-    const msg = document.createElement("div");
-    msg.className = "chat-message " + type;
-    msg.textContent = text;
-    messagesDiv.appendChild(msg);
-    messagesDiv.scrollTop = messagesDiv.scrollHeight;
-  }
-
-  async function sendChatMessage() {
-    const chatInput = document.querySelector('[data-testid="chat-input"]');
-    const messagesDiv = document.querySelector('[data-testid="chat-messages"]');
-
-    if (!chatInput || !messagesDiv) return;
-
-    const text = chatInput.value.trim();
-    if (!text) return;
-
-    // show user message
-    appendChatMessage(messagesDiv, text, "user");
-    chatInput.value = "";
-
-    // show typing indicator
-    const typing = document.createElement("div");
-    typing.className = "chat-message bot";
-    typing.textContent = "Typing...";
-    messagesDiv.appendChild(typing);
-
-    try {
-      const res = await fetch("http://localhost:5007/chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          message: text,
-          userData: {
-            name: document.getElementById("login-name")?.value || "User",
-            goal: "fitness",
-          },
-        }),
-      });
-
-      const data = await res.json();
-
-      typing.remove();
-      appendChatMessage(messagesDiv, data.reply, "bot");
-    } catch (err) {
-      typing.remove();
-      appendChatMessage(messagesDiv, "Error connecting to server", "bot");
-      console.error(err);
-    }
-  }
-
-  function Chatbot() {
-    const sendBtn = document.querySelector('[data-testid="chat-send-btn"]');
-    const chatInput =
-      document.querySelector('[data-testid="chat-input"]') ||
-      document.getElementById("chatInput");
-
-    if (sendBtn) {
-      sendBtn.addEventListener("click", sendChatMessage);
-    }
-
-    if (chatInput) {
-      chatInput.addEventListener("keydown", function (e) {
-        if (e.key === "Enter") {
-          e.preventDefault();
-          sendChatMessage();
-        }
-      });
-    }
-
-    // suggestion buttons
-    document.querySelectorAll(".suggestion").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        chatInput.value = btn.dataset.query;
-        sendChatMessage();
-      });
-    });
-  }
+  
   // ==================== CONTACT ====================
   function ContactForm() {
     const form = document.querySelector('[data-testid="contact-form"]');
